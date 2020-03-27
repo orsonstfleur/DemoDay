@@ -1,0 +1,25 @@
+body{
+  padding-top:80px;
+  word-wrap:break-word;
+  background-image: url('img/ground.jpg');
+  background-size: cover;
+}
+
+img{
+  height: 200px;
+}
+.container .jumbotron {
+    padding-right: 3%;
+    padding-left: 60px;
+    margin: 7% 1% 3% 73%;
+    width: 40%;
+    background-image: url(img/black2.jpg);
+    background-size: cover;
+    color: chocolate;
+}
+.slash{
+  text-decoration: line-through;
+}
+.col-sm-offset-3 {
+    margin: 1.5% 2% 1% 65%;
+}
