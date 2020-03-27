@@ -1,7 +1,7 @@
 # Demo Day Project
 
 
-![Final Project](img/profile.jpg)
+![Final Project](profile.jpg)
 
 ## My Demo Day Project will feature an application that enables a user to allocate restaurants, hotels, weather and means of transportation just by providing their location
 
