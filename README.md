@@ -10,8 +10,11 @@
 ![Final Project](page3.jpg)
 ## Search results page should show four different search results based off of location; Hotels Restaurants Uber & MBTA routes on this page
 ![Final Project](page4.jpg)
-
-##Technologies used:
+## Uber & MBTA search results page
+![Final Project](page5.jpg)
+## Restaurants & Hotel search results page
+![Final Project](page6.jpg)
+## Technologies used:
 1. EJS
 2. CSS
 3. Javascript
