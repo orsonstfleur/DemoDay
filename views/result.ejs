@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Travola</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css"/>
+    <link rel="stylesheet" href="assets2/css/main.css"/>
+  </head>
+  <body class="is-preload">
+    <!-- result from search by location -->
+    <h1>Here are your results</h1>
+      <ul class="results">
+        <% for(var i=0; i< results.length; i++) {%>
+        <li class="result">
+          <span><%= results[i].name%></span>
+        </li>
+        <% } %>
+      </ul>
+
+      <header id="header">
+        <div class="inner">
+          <a href="#" class="image avatar"><img src="images/avatar.jpg" alt="" /></a>
+          <h1><strong>Restaurants Hotels MBTA Uber</strong>, based on location<br/>
+          </h1>
+        </div>
+      </header>
+
+    <!-- Main -->
+      <div id="main">
+
+        <!-- One -->
+          <section id="one">
+            <header class="major">
+
+            </header>
+            <ul class="actions">
+              <li><a href="/profile" class="button">Profile</a></li>
+            </ul>
+          </section>
+
+        <!-- Two -->
+          <section id="two">
+            <h2>Search Results</h2>
+            <div class="row">
+              <article class="col-6 col-12-xsmall work-item">
+                <a href="images/commute.gif" class="image fit thumb"><img src="images/mbta.gif" alt="" /></a>
+                <h3>MBTA Transportation</h3>
+                <p>Where to?</p>
+              </article>
+              <article class="col-6 col-12-xsmall work-item">
+                <a href="images/uber2.gif" class="image fit thumb"><img src="images/uber.gif" alt="" /></a>
+                <h3>Uber Transportation</h3>
+                <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+              </article>
+              <article class="col-6 col-12-xsmall work-item">
+                <a href="images/food.gif" class="image fit thumb"><img src="images/food2.gif" alt="" /></a>
+                <h3>Restaurants</h3>
+                <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+              </article>
+              <article class="col-6 col-12-xsmall work-item">
+                <a href="images/clerk.gif" class="image fit thumb"><img src="images/luggage.gif" alt="" /></a>
+                <h3>Hotels</h3>
+                <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+              </article>
+              <article class="col-6 col-12-xsmall work-item">
+                <a href="images/con.jpg" class="image fit thumb"><img src="images/con.jpg" alt="" /></a>
+                <h3>Future Services</h3>
+                <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+              </article>
+              <article class="col-6 col-12-xsmall work-item">
+                <a href="images/con.jpg" class="image fit thumb"><img src="images/con.jpg" alt="" /></a>
+                <h3>Future Services</h3>
+                <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+              </article>
+            </div>
+            <ul class="actions">
+              <li><a href="/login" class="button">Log Out</a></li>
+            </ul>
+          </section>
+
+        <!-- Three -->
+          <!-- <section id="three">
+            <h2>Get In Touch</h2>
+            <p>Accumsan pellentesque commodo blandit enim arcu non at amet id arcu magna. Accumsan orci faucibus id eu lorem semper nunc nisi lorem vulputate lorem neque lorem ipsum dolor.</p>
+            <div class="row">
+              <div class="col-8 col-12-small">
+                <form method="post" action="#">
+                  <div class="row gtr-uniform gtr-50">
+                    <div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
+                    <div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
+                    <div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="4"></textarea></div>
+                  </div>
+                </form>
+                <ul class="actions">
+                  <li><input type="submit" value="Send Message" /></li>
+                </ul>
+              </div>
+              <div class="col-4 col-12-small">
+                <ul class="labeled-icons">
+                  <li>
+                    <h3 class="icon solid fa-home"><span class="label">Address</span></h3>
+                    1234 Somewhere Rd.<br />
+                    Nashville, TN 00000<br />
+                    United States
+                  </li>
+                  <li>
+                    <h3 class="icon solid fa-mobile-alt"><span class="label">Phone</span></h3>
+                    000-000-0000
+                  </li>
+                  <li>
+                    <h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
+                    <a href="#">hello@untitled.tld</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section> -->
+        </div>
+
+      <footer id="footer">
+				<div class="inner">
+					<ul class="copyright">
+						<li>&copy; Untitled</li>
+					</ul>
+				</div>
+			</footer>
+      <script src="assets2/js/jquery.min.js"></script>
+			<script src="assets2/js/jquery.poptrox.min.js"></script>
+			<script src="assets2/js/browser.min.js"></script>
+			<script src="assets2/js/breakpoints.min.js"></script>
+			<script src="assets2/js/util.js"></script>
+			<script src="assets2/js/main.js"></script>
+      <script src="assets/js3/main.js"></script>
+  </body>
+</html>

@@ -1,3 +1,4 @@
+var hotelApi = require('./api/hotels.js');
 module.exports = function(app, passport, db) {
 
 // normal routes ===============================================================
@@ -26,11 +27,15 @@ module.exports = function(app, passport, db) {
 
 // message board routes ===============================================================
 
-    app.post('/messages', (req, res) => {
+
+    app.post('/search', (req, res) => {
+      hotelApi.search(req.body.msg)
       db.collection('messages').save({name: req.body.name, traveled: false, msg: req.body.msg, thumbUp: 0, thumbDown:0}, (err, result) => {
         if (err) return console.log(err)
         console.log('saved to database')
-        res.redirect('/profile')
+        res.render('result',{
+          results : []
+        })
       })
     })
 
