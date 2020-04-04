@@ -7,7 +7,7 @@
 ## Sign-up/Sign-in page
 ![Final Project](page2.jpg)
 ## Profile Page: this page should only display recent searches and the ability to cross off a location that you have already visited along with the option to search.
-![Final Project](page3.jpg)
+![Final Project](page3.png)
 ## Search results page should show four different search results based off of location; Hotels Restaurants Uber & MBTA routes on this page
 ![Final Project](page4.jpg)
 ## Uber & MBTA search results page
