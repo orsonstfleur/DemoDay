@@ -1,4 +1,5 @@
-var hotelApi = require('./api/hotels.js');
+// var hotelApi = require('./api/hotels.js');
+const fetch = require('node-fetch')
 module.exports = function(app, passport, db) {
 
 // normal routes ===============================================================
@@ -26,15 +27,60 @@ module.exports = function(app, passport, db) {
     });
 
 // message board routes ===============================================================
+// hotel
+  app.get("/hotels", (req, res) =>{
+    const location = req.query.location
+    console.log("hit the search btn");
+    fetch(`https://maps.googleapis.com/maps/api/place/textsearch/json?query=hotels+in+${location}&key=AIzaSyDu7ML3Gh0Invl3_Wvx89faDViiR3r6rXM`)
+    .then(response => {
+      // console.log(response.json());
+      return response.json()
+    }).then(json => {
+      console.log("HOTELS",json);
+      res.render("hotels.ejs",{
+        hotels: json.results,
+        location: location
+      })
+    })
+    .catch(err => {
+      console.log(err);
+    });
+  })
+  // hotel
+  // // Restaurants
+  app.post("/restaurants", (req, res) =>{
+    const location = req.query.location
+    // console.log("hit the search btn");
+    // https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Museum%20of%20Contemporary%20Art%20Australia&inputtype=textquery&fields=photos,formatted_address,name,rating,opening_hours,geometry&key=AIzaSyDu7ML3Gh0Invl3_Wvx89faDViiR3r6rXM
+// https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CnRtAAAATLZNl354RwP_9UKbQ_5Psy40texXePv4oAlgP4qNEkdIrkyse7rPXYGd9D_Uj1rVsQdWT4oRz4QrYAJNpFX7rzqqMlZw2h2E2y5IKMUZ7ouD_SlcHxYq1yL4KbKUv3qtWgTK0A6QbGh87GB3sscrHRIQiG2RrmU_jF4tENr9wGS_YxoUSSDrYjWmrNfeEHSGSc3FyhNLlBU&key=AIzaSyDu7ML3Gh0Invl3_Wvx89faDViiR3r6rXM
+// https://maps.googleapis.com/maps/api/place/textsearch/xml?query=restaurants+in+Sydney&key=AIzaSyDu7ML3Gh0Invl3_Wvx89faDViiR3r6rXMY
 
+
+    fetch(`https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+${location}&key=AIzaSyDu7ML3Gh0Invl3_Wvx89faDViiR3r6rXM`)
+    .then(response => {
+      console.log( "HELLO",response);
+        return response.json()
+      console.log(response.json());
+    }).then(json => {
+      console.log("FOOD",json);
+      res.render("food.ejs",{
+        results : json
+
+      })
+    })
+
+  })
+    // Restaunts
 
     app.post('/search', (req, res) => {
-      hotelApi.search(req.body.msg)
+      // hotelApi.search(req.body.msg)
+
       db.collection('messages').save({name: req.body.name, traveled: false, msg: req.body.msg, thumbUp: 0, thumbDown:0}, (err, result) => {
         if (err) return console.log(err)
         console.log('saved to database')
         res.render('result',{
-          results : []
+          results : [],
+          location: req.body.location
         })
       })
     })

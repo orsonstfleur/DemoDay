@@ -22,24 +22,7 @@
     <div class="row">
 
       <!-- LOCAL INFORMATION -->
-      <div class="col-sm-6">
-        <div class="well">
-          <h3><span class="fa fa-user"></span> Local</h3>
 
-          <% if (user.local.email) { %>
-          <p>
-            <strong>id</strong>: <%= user._id %><br>
-            <strong>email</strong>: <%= user.local.email %><br>
-            <strong>password</strong>: <%= user.local.password %>
-          </p>
-
-          <a href="/unlink/local" class="btn btn-default">Unlink</a>
-          <% } else { %>
-          <a href="/connect/local" class="btn btn-default">Connect Local</a>
-          <% } %>
-
-        </div>
-      </div>
       <div class="col-sm-6">
         <h3>Recently Visited Locations</h3>
 
@@ -60,16 +43,16 @@
       <h2>Find Restaurants Hotels Weather Uber & MBTA transportation</h2>
       <h2 class="red">FINDER<i class="fas fa-map-pin"></i></h2>
       <% if (user.local.email) { %>
-      <form action="/search" method="POST">
-        <div class="username"><input type="text" placeholder="username" value="<%= user.local.email %>" name="name"></div>
-        <input class="msg" type="text" placeholder="Enter City" name="msg">
-        <button type="submit">Search</button>
+      <form class="" action="/search" method="post">
+        <input placeholder="Enter City" type="text" name="location" value="">
+        <button type="submit" name="button">Search</button>
       </form>
     </div>
     <% } %>
     </div>
     <script src="main.js"></script>
     <script src="assets/js/main.js"></script>
+
 </body>
 
 </html>
