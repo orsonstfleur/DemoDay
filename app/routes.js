@@ -16,6 +16,7 @@ module.exports = function(app, passport, db) {
           res.render('profile.ejs', {
             user : req.user,
             messages: result
+            
           })
         })
     });
@@ -76,7 +77,7 @@ module.exports = function(app, passport, db) {
     app.post('/search', isLoggedIn, (req, res) => {
       // hotelApi.search(req.body.msg)
       console.log("req",req.body);
-      db.collection('messages').save({name: req.user.local.email, traveled: false, msg: req.body.location, }, (err, result) => {
+      db.collection('messages').save({searchDate: new Date() ,name: req.user.local.email, traveled: false, msg: req.body.location, }, (err, result) => {
         if (err) return console.log(err)
         console.log('saved to database')
         res.render('result',{

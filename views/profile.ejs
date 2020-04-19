@@ -28,13 +28,19 @@
 
         <ul class="messages">
           <% for(var i=0; i< messages.length; i++) {%>
-          <% if (user.local.email == messages[i].name) { %>
+          <% if (user.local.email === messages[i].name) { %>
           <li class="message">
             <span hidden><%= messages[i].name%></span>
             <span class="<%= messages[i].traveled %>"><%= messages[i].msg %></span>
+              <% if(messages[i].searchDate){%>
+            <span>
+              <%= messages[i].searchDate.toLocaleString()%>
+            </span>
+            <% }%>
             <span><i class="fa fa-trash" aria-hidden="true"></i></span>
             <span><i class="fas fa-pencil-alt" aria-hidden="true"></i></span>
           </li>
+
           <% } %>
           <% } %>
         </ul>
