@@ -361,6 +361,7 @@ input, select, textarea {
 		overflow-x: hidden;
 		-webkit-overflow-scrolling: touch;
 		padding: 5px;
+		margin-top: 0%;
 	}
 
 		#main .items {

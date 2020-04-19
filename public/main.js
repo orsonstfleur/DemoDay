@@ -2,27 +2,7 @@ var thumbUp = document.getElementsByClassName("fa-thumbs-up");
 var thumbDown = document.getElementsByClassName("fa-thumbs-down");
 var trash = document.getElementsByClassName("fa-trash");
 var slash = document.getElementsByClassName("fa-pencil-alt");
-// var submit = document.getElementByClassName("submit")
-// fetching hotel api
-// submit.addEventListener('click', function(){
-//   alert("hello");
-//     fetch(`https://hotels4.p.rapidapi.com/locations/search?locale=en_US&query=${encodeURI(location)}`, {
-//       "method": "GET",
-//       "headers": {
-//         "x-rapidapi-host": "hotels4.p.rapidapi.com",
-//         "x-rapidapi-key": "5ba83f5692msh93df536b99fca65p1acb42jsnfd59783fd79f"
-//       }
-//     })
-//     .then(response => {
-//       console.log(response.json());
-//     })
-//     .catch(err => {
-//       console.log(err);
-//     });
-//
-// })
 
-// End
 Array.from(slash).forEach(function(element) {
       element.addEventListener('click', function(){
         const name = this.parentNode.parentNode.childNodes[1].innerText

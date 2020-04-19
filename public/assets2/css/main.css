@@ -299,6 +299,8 @@ input, select, textarea {
 		flex-wrap: wrap;
 		box-sizing: border-box;
 		align-items: stretch;
+    padding: 1% 1% 1% 45%;
+    width: 90%;
 	}
 
 		.row > * {
@@ -2688,6 +2690,7 @@ input, select, textarea {
 		max-width: 54em;
 		padding: 8em 4em 4em 4em;
 		width: calc(100% - 35%);
+    margin-top: 0%;
 	}
 
 		#main > section {

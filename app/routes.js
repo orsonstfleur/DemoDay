@@ -41,6 +41,7 @@ module.exports = function(app, passport, db) {
         hotels: json.results,
         location: location
       })
+      console.log(hotels[0].photos[0])
     })
     .catch(err => {
       console.log(err);
@@ -72,10 +73,10 @@ module.exports = function(app, passport, db) {
   })
     // Restaunts
 
-    app.post('/search', (req, res) => {
+    app.post('/search', isLoggedIn, (req, res) => {
       // hotelApi.search(req.body.msg)
-
-      db.collection('messages').save({name: req.body.name, traveled: false, msg: req.body.msg, thumbUp: 0, thumbDown:0}, (err, result) => {
+      console.log("req",req.body);
+      db.collection('messages').save({name: req.user.local.email, traveled: false, msg: req.body.location, }, (err, result) => {
         if (err) return console.log(err)
         console.log('saved to database')
         res.render('result',{
