@@ -16,7 +16,7 @@ module.exports = function(app, passport, db) {
           res.render('profile.ejs', {
             user : req.user,
             messages: result
-            
+
           })
         })
     });
@@ -31,18 +31,18 @@ module.exports = function(app, passport, db) {
 // hotel
   app.get("/hotels", (req, res) =>{
     const location = req.query.location
-    console.log("hit the search btn");
-    fetch(`https://maps.googleapis.com/maps/api/place/textsearch/json?query=hotels+in+${location}&key=AIzaSyDu7ML3Gh0Invl3_Wvx89faDViiR3r6rXM`)
+     fetch(`https://maps.googleapis.com/maps/api/place/textsearch/json?query=hotels+in+${location}&key=AIzaSyDu7ML3Gh0Invl3_Wvx89faDViiR3r6rXM`)
     .then(response => {
       // console.log(response.json());
       return response.json()
     }).then(json => {
-      console.log("HOTELS",json);
+      // console.log("HOTELS",json);
       res.render("hotels.ejs",{
         hotels: json.results,
-        location: location
+        location: location,
+
       })
-      console.log(hotels[0].photos[0])
+      console.log( "type", json.results)
     })
     .catch(err => {
       console.log(err);
@@ -50,14 +50,12 @@ module.exports = function(app, passport, db) {
   })
   // hotel
   // // Restaurants
-  app.post("/restaurants", (req, res) =>{
+  app.get("/restaurants", (req, res) =>{
     const location = req.query.location
     // console.log("hit the search btn");
     // https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Museum%20of%20Contemporary%20Art%20Australia&inputtype=textquery&fields=photos,formatted_address,name,rating,opening_hours,geometry&key=AIzaSyDu7ML3Gh0Invl3_Wvx89faDViiR3r6rXM
 // https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CnRtAAAATLZNl354RwP_9UKbQ_5Psy40texXePv4oAlgP4qNEkdIrkyse7rPXYGd9D_Uj1rVsQdWT4oRz4QrYAJNpFX7rzqqMlZw2h2E2y5IKMUZ7ouD_SlcHxYq1yL4KbKUv3qtWgTK0A6QbGh87GB3sscrHRIQiG2RrmU_jF4tENr9wGS_YxoUSSDrYjWmrNfeEHSGSc3FyhNLlBU&key=AIzaSyDu7ML3Gh0Invl3_Wvx89faDViiR3r6rXM
 // https://maps.googleapis.com/maps/api/place/textsearch/xml?query=restaurants+in+Sydney&key=AIzaSyDu7ML3Gh0Invl3_Wvx89faDViiR3r6rXMY
-
-
     fetch(`https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+${location}&key=AIzaSyDu7ML3Gh0Invl3_Wvx89faDViiR3r6rXM`)
     .then(response => {
       console.log( "HELLO",response);
@@ -66,10 +64,13 @@ module.exports = function(app, passport, db) {
     }).then(json => {
       console.log("FOOD",json);
       res.render("food.ejs",{
-        results : json
+        restaurants : json.results,
+        location: location
 
       })
-    })
+    }).catch(err => {
+    console.log(err);
+    });
 
   })
     // Restaunts

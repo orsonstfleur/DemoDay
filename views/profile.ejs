@@ -1,31 +1,23 @@
 <!doctype html>
 <html>
-
 <head>
   <title>Travola</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-  <script src="https://kit.fontawesome.com/da4e94f33d.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="assets/css/main.css"/>
-
-  <!-- <link rel="stylesheet" href="style2.css"> -->
-</head>
-
-<body>
+  <link rel="stylesheet" href="assets2/css/main.css"/>
+  </head>
+  <body>
   <div class="container">
-    <div class="page-header text-center">
-      <!-- <h1><span class="far fa-hand-peace"></span></h1> -->
-      <a href="/logout" class="btn btn-default btn-sm">Logout</a>
-    </div>
+    <header id="header">
+      <section id="one">
+        <ul class="actions">
+          <li><a href="/login" class="button">Log Out</a></li>
+          <h3>Recently Visited Locations</h3>
 
-    <div class="row">
-
-      <!-- LOCAL INFORMATION -->
-
+        </ul>
+      </section>
       <div class="col-sm-6">
         <h3>Recently Visited Locations</h3>
-
         <ul class="messages">
           <% for(var i=0; i< messages.length; i++) {%>
           <% if (user.local.email === messages[i].name) { %>
@@ -40,25 +32,30 @@
             <span><i class="fa fa-trash" aria-hidden="true"></i></span>
             <span><i class="fas fa-pencil-alt" aria-hidden="true"></i></span>
           </li>
+          <% } %>
+          <% } %>
+         </ul>
+       </div>
+    </header>
 
-          <% } %>
-          <% } %>
-        </ul>
-    </div>
+    <div class="row">
     <div class="finder">
-      <h2>Find Hotels in your location</h2>
-      <h2 class="red">FINDER<i class="fas fa-map-pin"></i></h2>
+      <h2>Find Hotels & Restaunts in your location</h2>
       <% if (user.local.email) { %>
       <form class="" action="/search" method="post">
         <input placeholder="Enter City" type="text" name="location" value="">
         <button type="submit" >Search</button>
       </form>
-    </div>
+     </div>
     <% } %>
     </div>
+    <script src="assets2/js/jquery.min.js"></script>
+    <script src="assets2/js/jquery.poptrox.min.js"></script>
+    <script src="assets2/js/browser.min.js"></script>
+    <script src="assets2/js/breakpoints.min.js"></script>
+    <script src="assets2/js/util.js"></script>
+    <script src="assets2/js/main.js"></script>
+    <script src="assets/js3/main.js"></script>
     <script src="main.js"></script>
-    <script src="assets/js/main.js"></script>
-
 </body>
-
 </html>

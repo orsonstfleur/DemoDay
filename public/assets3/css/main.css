@@ -32,6 +32,15 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 }
+.rise{
+	margin: 1% 1% 69% 0%;
+}
+.sink{
+	margin: 1% 1% -9% 0%;
+}
+.rating{
+	display: none;
+}
 
 ol, ul {
 	list-style: none;
