@@ -28,10 +28,12 @@
         <article class="item thumb span-1">
 					  <h2 class="rise">
 							<%= hotels[i].name %>
+							<a class="rev" href="/hotels/<%= hotels[i].place_id %>?photo=<%= hotels[i].photos[0].photo_reference %>"><span class="rev">----->REVIEWS</span></a>
 						</h2>
+
 						<h2 class="sink">
 							<%= hotels[i].formatted_address %>
-						</h2></a>
+						</h2>
 						<h2 class="rating">
 							<%= hotels[i].rating %>
 							<strong>

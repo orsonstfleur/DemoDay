@@ -3,6 +3,17 @@ var thumbDown = document.getElementsByClassName("fa-thumbs-down");
 var trash = document.getElementsByClassName("fa-trash");
 var slash = document.getElementsByClassName("fa-pencil-alt");
 
+// console.log( document.querySelector('#city'),"thats even better");
+//
+//   console.log(document.getElementById("btn"),"button");
+// document.getElementById("btn").addEventListener('click',function (){
+// let searchT  = document.querySelector("#input").value
+// var textnode = document.createTextNode(searchT)
+//  document.querySelector('#city').appendChild(textnode)
+//
+//  console.log(searchT);
+// })
+
 Array.from(slash).forEach(function(element) {
       element.addEventListener('click', function(){
         const name = this.parentNode.parentNode.childNodes[1].innerText

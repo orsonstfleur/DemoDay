@@ -18,14 +18,40 @@
 
     <!-- LOGIN FORM -->
     <form action="/signup" method="post">
-        <div class="form-group">
-            <label>Email</label>
-            <input type="text" class="form-control" name="email">
-        </div>
-        <div class="form-group">
-            <label>Password</label>
-            <input type="password" class="form-control" name="password">
-        </div>
+        
+            <!--  -->
+            <div class="form-group">
+              <label for="userName">
+                <span>Choose your username?</span>
+              </label>
+              <input type="text" name="userName" class="form-control" id="nme"/>
+            </div>
+
+            <div class="form-group">
+              <label for="firstName">
+                <span>Whats your first name?</span>
+              </label>
+              <input type="text" name="firstName" class="form-control" id="nme" />
+            </div>
+            <div class="form-group">
+              <label for="lastName">
+                <span>What's your last name?</span>
+              </label>
+              <input type="text" name="lastName" class="form-control" id="nme"/>
+            </div>
+            <div class="form-group">
+              <label for="email">
+                <span>Choose your email?</span>
+              </label>
+              <input type="text" name="email" class="form-control" id="nme" />
+            </div>
+            <div class="form-group">
+              <label for="password">
+                <span>Choose your password?</span>
+              </label>
+              <input type="text" name="password" class="form-control" id="nme" />
+            </div>
+            <!--  -->
 
         <button type="submit" class="btn btn-warning btn-lg">Signup</button>
     </form>

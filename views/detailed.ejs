@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Travola</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="stylesheet" href="/assets2/css/main.css"/>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body class="is-preload">
+    <header id="header">
+      <section id="one" class="one">
+        <section>
+          <ul class="actions">
+            <li><a href="/profile" class="button">Profile</a></li>
+          </ul>
+        </section>
+
+      </section>
+      <div class="inner">
+        <a href="#" class="image avatar"><img src="" alt="" /></a>
+
+
+        <h1><strong> Find Restaurants & Hotels</strong>, based on location<br/>
+        </h1>
+      </div>
+      <ul class="actions">
+        <li><a href="/login" class="button">Log Out</a></li>
+      </ul>
+    </header>
+
+    <!-- result from search by location -->
+
+<!--  -->
+ <div id="main" class="classy">
+
+
+ <section id="two" class="two">
+  <div class="row">
+      <ul class="results">
+        <li class="result">
+          <h1><span><%= place.result.name%></span></h1>
+          <h1><span><%= place.formatted_address %></span></h1>
+
+        </li>
+
+      </ul>
+    <a href="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%= photo %>&key=AIzaSyDu7ML3Gh0Invl3_Wvx89faDViiR3r6rXM" class="image fit thumb"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%= photo %>&key=AIzaSyDu7ML3Gh0Invl3_Wvx89faDViiR3r6rXM" alt="" /></a>
+    <div class="inner">
+
+      <h3><a href="#" class="image avatar"><img src="/images/rating.gif" alt="" /></a></h3>
+    </div>
+
+    <p></p>
+    </article>
+  </div>
+</section>
+<!--  -->
+      <!-- <img src = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%= photo %>&key=AIzaSyDu7ML3Gh0Invl3_Wvx89faDViiR3r6rXM"> -->
+      <form class=""  method="post">
+        <!-- <input type="text" name="" value=""> -->
+        <input id="comments" placeholder="Write a Review..." type="text" name="comments" value="">
+        <span id="userName" data-username="<%= user[0].local.userName%>"></span>
+        <span id="placeId" data-placeid="<%= place.result.place_id%>"></span>
+        <button id="submitComment" type="button" name="button">Comment</button>
+        <!-- to do: can pass username & profile pic -->
+      </form>
+
+      <% for(var i=0; i< commentResult.length; i++) {%>
+
+         <section>
+           <section class="class">
+             <span class="red"><%= commentResult[i].username%>:</span>
+             <span><%= commentResult[i].comment%></span>
+           </section>
+         </section>
+
+
+      <%}%>
+
+
+    </div>
+      <footer id="footer">
+				<div class="inner">
+					<ul class="copyright">
+						<li>&copy; Untitled</li>
+					</ul>
+				</div>
+			</footer>
+      <script src="assets/jsjquery.min.js"></script>
+			<script src="assets/jsjquery.poptrox.min.js"></script>
+			<script src="assets/jsbrowser.min.js"></script>
+			<script src="assets/jsbreakpoints.min.js"></script>
+			<script src="assets/jsutil.js"></script>
+			<script src="assets/jsmain.js"></script>
+      <script src="asset/js3main.js"></script>
+      <script src="/details.js" type="text/javascript">
+
+      </script>
+  </body>
+</html>

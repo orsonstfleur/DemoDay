@@ -12,12 +12,12 @@
       <section id="one">
         <ul class="actions">
           <li><a href="/login" class="button">Log Out</a></li>
-          <h3>Recently Visited Locations</h3>
+          <!-- <h3>Recently Visited Locations</h3> -->
 
         </ul>
       </section>
       <div class="col-sm-6">
-        <h3>Recently Visited Locations</h3>
+        <h3>Search History</h3>
         <ul class="messages">
           <% for(var i=0; i< messages.length; i++) {%>
           <% if (user.local.email === messages[i].name) { %>
@@ -43,8 +43,8 @@
       <h2>Find Hotels & Restaunts in your location</h2>
       <% if (user.local.email) { %>
       <form class="" action="/search" method="post">
-        <input placeholder="Enter City" type="text" name="location" value="">
-        <button type="submit" >Search</button>
+        <input id="input" placeholder="Enter City" type="text" name="location" value="">
+        <button type="submit" id="btn" >Search</button>
       </form>
      </div>
     <% } %>

@@ -35,9 +35,20 @@
 										<% for(let i = 0; i < restaurants.length; i++){
 										%>
 							<article class="item thumb span-1">
-								<h2>
+								<h2 class="rise">
 									<%= restaurants[i].name %>
+									<a href="/hotels/<%= restaurants[i].place_id %>?photo=<%= restaurants[i].photos[0].photo_reference %>">--------> REVIEWS</a>
 								</h2>
+								<h2 class="sink">
+									<%= restaurants[i].formatted_address %>
+								</h2>
+								<h2 class="rating">
+									<%= restaurants[i].rating %>
+									<strong>
+										Star Rating
+									</strong>
+								</h2>
+
 								<a href = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%= restaurants[i].photos[0].photo_reference %>&key=AIzaSyDu7ML3Gh0Invl3_Wvx89faDViiR3r6rXM" class="image">
 								<img src = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%= restaurants[i].photos[0].photo_reference %>&key=AIzaSyDu7ML3Gh0Invl3_Wvx89faDViiR3r6rXM">
 								</a>
