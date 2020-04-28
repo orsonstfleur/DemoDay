@@ -1,6 +1,6 @@
 <!doctype html>
 <html>
-<head>
+  <head>
   <title>Travola</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="assets/css/main.css"/>
@@ -23,14 +23,15 @@
           <% if (user.local.email === messages[i].name) { %>
           <li class="message">
             <span hidden><%= messages[i].name%></span>
-            <span class="<%= messages[i].traveled %>"><%= messages[i].msg %></span>
+            <span class="<%= messages[i].traveled %>"><a href="#"><%= messages[i].msg %></a></span>
               <% if(messages[i].searchDate){%>
             <span>
               <%= messages[i].searchDate.toLocaleString()%>
             </span>
             <% }%>
-            <span><i class="fa fa-trash" aria-hidden="true"></i></span>
-            <span><i class="fas fa-pencil-alt" aria-hidden="true"></i></span>
+            <i class=""></i>
+            <span><i class="fas fa-times" aria-hidden="true"></i></span>
+            <!-- <span><i class="fas fa-pencil-alt" aria-hidden="true"></i></span> -->
           </li>
           <% } %>
           <% } %>
@@ -40,7 +41,7 @@
 
     <div class="row">
     <div class="finder">
-      <h2>Find Hotels & Restaunts in your location</h2>
+      <h2>Find Hotels & Restaurants in your location</h2>
       <% if (user.local.email) { %>
       <form class="" action="/search" method="post">
         <input id="input" placeholder="Enter City" type="text" name="location" value="">

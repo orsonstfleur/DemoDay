@@ -72,7 +72,60 @@ module.exports = function(app, passport, db, ObjectId) {
     })
   })
   // post route
+// favorite
+app.post('/addToFav', isLoggedIn, (req, res) => {
+  let uId = ObjectId(req.session.passport.user)
 
+  db.collection('favorites').save({uId: uId, favorite: req.body.favorites, username: req.body.username }, (err, result) => {
+    if (err) return console.log(err)
+    res.send("saved")
+    // console.log('saved to database')
+    // res.render('favorites.ejs',{
+    //   results : [],
+    //   location: req.body.location
+    // })
+  })
+})
+
+app.get("/favorites", (req, res) =>{
+  let uId = ObjectId(req.session.passport.user)
+
+  console.log(uId,"uid");
+  db.collection('users').find({_id: uId}).toArray((err, user) => {
+
+    console.log(user, "user");
+    db.collection('favorites').find({uId: uId}).toArray((err, places) => {
+      console.log(places, "result");
+      // let comments;``
+      // if (result.length === 0) {
+      //   comments = []
+      // }else{
+      //   comments = result[0].comments
+      // }
+      // console.log(comments, "okay");
+      if (err) return console.log(err)
+      fetch(`https://maps.googleapis.com/maps/api/place/details/json?placeid=${place_id}&key=AIzaSyDu7ML3Gh0Invl3_Wvx89faDViiR3r6rXM`)
+        .then(response => {
+          return response.json()
+        }).then(json => {
+          console.log("HOTELS",json);
+          res.render("favorites.ejs",{
+            places: results,
+            commentResult: comments,
+            user: user,
+            photo: req.query.photo
+
+          })
+        })
+        .catch(err => {
+          console.log(err);
+        });
+
+      })
+    })
+      // console.log( "type", json.results)
+    })
+// favorite
 
   app.get('/hotels/:info', isLoggedIn, function(req, res) {
     let place_id = req.params.info
@@ -133,6 +186,7 @@ module.exports = function(app, passport, db, ObjectId) {
     // hotel
     app.get("/hotels", (req, res) =>{
       const location = req.query.location
+
       fetch(`https://maps.googleapis.com/maps/api/place/textsearch/json?query=hotels+in+${location}&key=AIzaSyDu7ML3Gh0Invl3_Wvx89faDViiR3r6rXM`)
         .then(response => {
           // console.log(response.json());

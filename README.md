@@ -13,7 +13,7 @@
 2. CSS
 3. Javascript
 4. MongoDb
-5. Express]
+5. Express
 ## Installation
 
 1. Clone repo

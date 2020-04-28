@@ -5,9 +5,9 @@
 	<title>Travola</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets3/css/main.css" />
+	<link rel="stylesheet" href="assets3/css/main.css"/>
 	<noscript>
-		<link rel="stylesheet" href="assets3/css/noscript.css" /></noscript>
+	<link rel="stylesheet" href="assets3/css/noscript.css"/></noscript>
 </head>
 
 <body class="is-preload">
@@ -28,7 +28,7 @@
         <article class="item thumb span-1">
 					  <h2 class="rise">
 							<%= hotels[i].name %>
-							<a class="rev" href="/hotels/<%= hotels[i].place_id %>?photo=<%= hotels[i].photos[0].photo_reference %>"><span class="rev">----->REVIEWS</span></a>
+							<a id="revRed" class="rev" href="/hotels/<%= hotels[i].place_id %>?photo=<%= hotels[i].photos[0].photo_reference %>"><span id="revRed" class="rev">----->REVIEWS</span></a>
 						</h2>
 
 						<h2 class="sink">
