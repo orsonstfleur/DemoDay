@@ -1,6 +1,7 @@
 /* detailed.ejs */
 *{
   box-sizing: border-box;
+
 }
  .row{
   margin: -20% 1% -6% -15%;
@@ -15,6 +16,9 @@
 .class{
   border:none;
   margin: 1em 0 0 0;
+}
+.result{
+  text-decoration: none;
 }
 #main > section {
   margin: 1em 0 0 0;
@@ -31,7 +35,8 @@
 .body{
   position: absolute;
 }
- #revRed{
+ .rev{
+   float: right;
   color: red;
 }
 #main > section:first-child {

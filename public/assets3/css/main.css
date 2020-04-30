@@ -42,6 +42,7 @@ body {
 	display: none;
 }
 
+
 ol, ul {
 	list-style: none;
 }
@@ -178,10 +179,15 @@ input, select, textarea {
 		-ms-transition: color 0.25s ease-in-out;
 		transition: color 0.25s ease-in-out;
 	}
+	a:hover {
+		color: #d64760;
+	}
 
-		a:hover {
-			color: #d64760;
-		}
+	.rev{
+		color: red;
+		float: right;
+	}
+
 
 	h1, h2, h3, h4, h5, h6 {
 		font-weight: 400;

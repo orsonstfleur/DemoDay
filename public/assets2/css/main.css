@@ -6,7 +6,12 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
-
+.text{
+  text-decoration: none;
+}
+li.result{
+  text-decoration: none;
+}
 .container{
   float: right;
 }
@@ -34,6 +39,7 @@ footer, header, hgroup, menu, nav, section {
 
 body {
 	line-height: 1;
+
 }
 
 ol, ul {
@@ -302,6 +308,7 @@ input, select, textarea {
 		align-items: stretch;
     padding: 1% 1% 1% 45%;
     width: 90%;
+    text-decoration: none;
 	}
 
 		.row > * {

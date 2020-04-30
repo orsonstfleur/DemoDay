@@ -17,6 +17,7 @@
           </ul>
         </section>
 
+
       </section>
       <div class="inner">
         <a href="#" class="image avatar"><img src="" alt="" /></a>
@@ -24,11 +25,18 @@
 
         <h1><strong> Find Restaurants & Hotels</strong>, based on location<br/>
         </h1>
+
       </div>
-      <ul class="actions">
-        <li><a href="/login" class="button">Log Out</a></li>
-      </ul>
+      <section id="one">
+        <ul class="actions">
+          <li><a href="/favorites" class="button">favorites</a></li>
+          <!-- <h3>Recently Visited Locations</h3> -->
+        </ul>
+      </section>
+
+
     </header>
+
 
     <!-- result from search by location -->
 
@@ -40,8 +48,8 @@
   <div class="row">
       <ul class="results">
         <li class="result">
-          <h1><span><%= place.result.name%></span></h1>
-          <h1><span><%= place.formatted_address %></span></h1>
+          <h1><%= place.result.name%></h1>
+          <h1><span class="text"><%= place.formatted_address %></span></h1>
 
         </li>
 

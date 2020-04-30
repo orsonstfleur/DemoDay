@@ -87,16 +87,18 @@ app.post('/addToFav', isLoggedIn, (req, res) => {
   })
 })
 
-app.get("/favorites", (req, res) =>{
+app.get("/favorites", isLoggedIn, (req, res) =>{
   let uId = ObjectId(req.session.passport.user)
 
-  console.log(uId,"uid");
   db.collection('users').find({_id: uId}).toArray((err, user) => {
 
-    console.log(user, "user");
     db.collection('favorites').find({uId: uId}).toArray((err, places) => {
-      console.log(places, "result");
-      // let comments;``
+      const favoritePlaceSet = new Set();
+
+      for (let place of places) {
+        favoritePlaceSet.add(place.favorite);
+      }
+      const favoritePlaces = Array.from(favoritePlaceSet);      // let comments;``
       // if (result.length === 0) {
       //   comments = []
       // }else{
@@ -104,22 +106,29 @@ app.get("/favorites", (req, res) =>{
       // }
       // console.log(comments, "okay");
       if (err) return console.log(err)
-      fetch(`https://maps.googleapis.com/maps/api/place/details/json?placeid=${place_id}&key=AIzaSyDu7ML3Gh0Invl3_Wvx89faDViiR3r6rXM`)
-        .then(response => {
-          return response.json()
-        }).then(json => {
-          console.log("HOTELS",json);
-          res.render("favorites.ejs",{
-            places: results,
-            commentResult: comments,
-            user: user,
-            photo: req.query.photo
+      let promiseArray = [];
+      for (let place_id of favoritePlaces) {
+        promiseArray.push(fetch(`https://maps.googleapis.com/maps/api/place/details/json?placeid=${place_id}&key=AIzaSyDu7ML3Gh0Invl3_Wvx89faDViiR3r6rXM`).then(response => response.json()));
+      }
+      Promise.all(promiseArray).then((values) => {
+        console.log(values);
+        res.render("favorites.ejs",{
+          places: values.map((entry) => entry.result),
+          // commentResult: comments,
+          user: user,
 
-          })
         })
-        .catch(err => {
-          console.log(err);
-        });
+      });
+      // fetch(`https://maps.googleapis.com/maps/api/place/details/json?placeid=${place_id}&key=AIzaSyDu7ML3Gh0Invl3_Wvx89faDViiR3r6rXM`)
+      //   .then(response => {
+      //     return response.json()
+      //   }).then(json => {
+      //     console.log("HOTELS",json);
+
+      //   })
+      //   .catch(err => {
+      //     console.log(err);
+      //   });
 
       })
     })
